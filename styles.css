@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+:root {
+    --GrayishBlue: hsl(240, 18%, 77%);
+    --DarkBlue: hsl(240, 38%, 20%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://raw.githubusercontent.com/platzi/Coding-Bootcamp-Testimonials-Slider/7f5a5edd3b818bb4f75278dd4e4bb372ec08cf87/images/pattern-bg.svg');
+    background-repeat: no-repeat;
+    background-position: 63vw 0;
+    display: flex;
+}
+
+.buttons img {
+    width: 20px;
+    height: 26px;
+    margin: 0 31px;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.buttons {
+    border-radius: 100px;
+    background-color: white;
+    width: 175px;
+    top: -45px;
+    left: 15px;
+    padding: 20px 0;
+    box-shadow: 0px 8px 20px black;
+}
+
+p {
+    font-weight: 300;
+    color: var(--DarkBlue);
+    top: 30%;
+    left: 51%;
+    z-index: 1;
+    font-size: 32px;
+}
+
+main {
+    width: 100%;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    position: absolute;
+    display: flex;
+    align-content: center;
+    width: 100%;
+    top: 0;
+}
+
+.slide-1 {
+    left: 0;
+}
+
+.slide-2 {
+    right: -100vw;
+    display: none;
+}
+
+.slide1 {
+    display: none;
+}
+
+.from1 {
+    display: flex;
+    animation: fromTanya 500ms;
+    animation-fill-mode: forwards;
+}
+
+.from2 {
+    animation: fromJohn 500ms;
+    animation-fill-mode: forwards;
+}
+
+article {
+    width: 45%;
+}
+
+figure {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 37%;
+}
+
+img {
+    width: 100%;
+    box-shadow: 0px 16px 20px black;
+}
+
+.curve {
+    background-image: url('https://raw.githubusercontent.com/platzi/Coding-Bootcamp-Testimonials-Slider/7f5a5edd3b818bb4f75278dd4e4bb372ec08cf87/images/pattern-curve.svg');
+    width: 600px;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.quote {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    background-image: url('https://raw.githubusercontent.com/platzi/Coding-Bootcamp-Testimonials-Slider/7f5a5edd3b818bb4f75278dd4e4bb372ec08cf87/images/pattern-quotes.svg');
+    width: 120px;
+    height: 100px;
+}
+
+.name, .position {
+    font-size: 18px;
+    top: 245px;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.position {
+    font-weight: 500;
+    color: var(--GrayishBlue);
+}
+
+@keyframes toJohn {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100vw;
+    }
+}
+
+@keyframes toTanya {
+    from {
+        right: 0;
+    }
+    to {
+        right: -100vw;
+    }
+}
+
+@keyframes fromTanya {
+    from {
+        right: -100vw;
+    }
+    to {
+        right: 0;
+    }
+}
+
+@keyframes fromJohn {
+    from {
+        left: -100vw;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    figure {
+        width: 40%;
+        top: 20%;
+    }
+    p {
+        left: 40%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    p {
+        top: 10%;
+        left: 5%;
+    }
+    figure {
+        width: 50%;
+        top: 10%;
+    }
+    .name, .position {
+        top: 75px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        text-align: center;
+        width: 150vw;
+        background-position: initial;
+        background-size: 145%;
+    }
+    main {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    section {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    figure {
+        width: 70%;
+        display: flex;
+        right: initial;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+    }
+    p {
+        z-index: 0;
+        width: 100%;
+        left: initial;
+    }
+    article {
+        width: 95%;
+        top: 75%;
+    }
+    .name, .position {
+        font-size: 24px;
+    }
+    .quote {
+        left: 45%;
+        top: 85%;
+    }
+    .curve {
+        width: 100%;
+        height: 150px;
+        position: absolute;
+        bottom: -100%;
+        background-repeat: no-repeat;
+    }
+}
